@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C)2026 Johannes Decker <lohnertspuckjoe@gmail.com> -->
+<MacpadPlus>
+	<functionList>
+		<!-- ================================================ [ Hollywood ] -->
+
+		<parser
+			displayName="Hollywood"
+			id         ="hollywood_function"
+		>
+			<function
+				mainExpr="((^|\s+|[{,])([A-Za-z_$][\w$]*\.)*[A-Za-z_$][\w$]*\s*[=:]|^|[\s;\}]+)\s*function(\s+[A-Za-z_][\w$:.]*)?\s*\([^\)\(]*\)[\n\s]"
+			>
+				<functionName>
+					<nameExpr expr="[A-Za-z_$][\w$:.]*\s*[=]|[A-Za-z_$][\w$:.]*\s*\(" />
+					<nameExpr expr="([A-Za-z_$][\w$:.]*\.)*[A-Za-z_$][\w$:.]*" />					
+				</functionName>
+			</function>
+		</parser>
+	</functionList>
+</MacpadPlus>

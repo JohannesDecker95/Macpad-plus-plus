@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C)2026 Johannes Decker <lohnertspuckjoe@gmail.com> -->
+<MacpadPlus>
+  <functionList>
+    <!-- functionList parser for Makefile format (langID="10") -->
+    <parser displayName="Makefile" id="makefile" commentExpr="(?m-s:[#].*$)">
+      <function mainExpr="^[\w\$\(\)\-\/\.]+:">
+        <functionName>
+          <nameExpr expr="[\w\$\(\)\-\/\.]+"/>
+        </functionName>
+      </function>
+    </parser>
+  </functionList>
+</MacpadPlus>

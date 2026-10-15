@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C)2026 Johannes Decker <lohnertspuckjoe@gmail.com> -->
+<MacpadPlus>
+	<functionList>
+
+		<parser
+			displayName="GDScript"
+			id         ="gdscript_syntax"
+			commentExpr="(?s:'''.*?''')|(?s:\x22\x22\x22.*?\x22\x22\x22)|(?m-s:#.*?$)"
+		>
+			<classRange
+				mainExpr    ="^class\x20\K.*?(?=\n\S|\Z)"
+			>
+				<className>
+					<nameExpr expr="\w+(?=[\s:])" />
+				</className>
+				<function
+					mainExpr="\s+?func\x20\K.+?(?=:\s*?$|:\s*?#)"
+				>
+					<functionName>
+						<funcNameExpr expr=".*" />
+					</functionName>
+				</function>
+			</classRange>
+			<function
+				mainExpr="^func\x20\K.+?(?=:\s*?$|:\s*?#)"
+			>
+				<functionName>
+					<nameExpr expr=".*" />
+				</functionName>
+			</function>
+		</parser>
+	</functionList>
+</MacpadPlus>

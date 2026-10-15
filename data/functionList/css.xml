@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C)2026 Johannes Decker <lohnertspuckjoe@gmail.com> -->
+<MacpadPlus>
+    <functionList>
+        <parser id="css_function" displayName="CSS">
+            <function mainExpr="^([^\n\{]+)\s*\{">
+                <functionName>
+                    <nameExpr expr="[^\n\{]+"/>
+                </functionName>
+            </function>
+        </parser>
+    </functionList>
+</MacpadPlus>

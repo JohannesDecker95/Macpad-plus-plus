@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C)2026 Johannes Decker <lohnertspuckjoe@gmail.com> -->
+<MacpadPlus>
+	<functionList>
+		<parser
+			displayName="Fortran Free Form style - FORmula TRANslation"
+			id         ="fortran_freeform"
+			commentExpr="(?x)                                               # free-spacing (see `RegEx - Pattern Modifiers`)
+							(?m-s:!.*$)                                     # Single Line Comment
+						"
+		>
+			<function
+				mainExpr="(?x)                                              # free-spacing (see `RegEx - Pattern Modifiers`)
+						(?im-s)                                             # case-insensitive, ^ and $ match at line breaks, dot does not
+						^\h*                                                # optional leading whitespace at start-of-line
+						(?:
+							(?:
+								ELEMENTAL
+							|	(?:IM)?PURE
+							|	MODULE
+							|	(?:NON_)?RECURSIVE
+							)
+							\s+
+						)*
+						(?:FUNCTION|SUBROUTINE)\s+
+						\K                                                  # discard text matched so far
+						[A-Z]\w{0,62}                                       # valid character combination for identifiers
+						(?:\s*\([^()]*\))?                                  # optional paramater list
+					"
+			>
+				<!-- comment out the following node to display the method with its parameters -->
+				<functionName>
+					<nameExpr expr="\w+" />
+				</functionName>
+			</function>
+		</parser>
+	</functionList>
+</MacpadPlus>

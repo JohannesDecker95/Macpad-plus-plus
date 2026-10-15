@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C)2026 Johannes Decker <lohnertspuckjoe@gmail.com> -->
+<MacpadPlus>
+	<functionList>
+		<!-- ====================================================== [ Python ] -->
+
+		<parser
+			displayName="Python"
+			id         ="python_syntax"
+			commentExpr="(?s:'''.*?''')|(?m-s:#.*?$)"
+		>
+			<classRange
+				mainExpr    ="^class\x20\K.*?(?=\n\S|\Z)"
+			>
+				<className>
+					<nameExpr expr="\w+(?=\s*[\(|:])" />
+				</className>
+				<function
+					mainExpr="\s(async )?def\x20\K.+?(?=(:\h*$|,\h*$|:\s*#))"
+				>
+					<functionName>
+						<funcNameExpr expr=".*" />
+					</functionName>
+				</function>
+			</classRange>
+			<function
+				mainExpr="^(async )?def\x20\K.+?(?=(:\h*$|,\h*$|:\s*#))"
+			>
+				<functionName>
+					<nameExpr expr=".*" />
+				</functionName>
+			</function>
+		</parser>
+	</functionList>
+</MacpadPlus>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C)2026 Johannes Decker <lohnertspuckjoe@gmail.com> -->
+<MacpadPlus>
+	<functionList>
+		<!-- ======================================================== [ Ruby ] -->
+
+		<parser
+			displayName="Ruby"
+			id         ="ruby_syntax"
+		>
+			<!-- within a class-->
+			<classRange
+				mainExpr    ="^class\x20\K.*?(?=\n\S|\Z)"
+			>
+				<className>
+					<nameExpr expr="\w+" />
+				</className>
+				<function
+					mainExpr="^\s*def\s+\w+"
+				>
+					<functionName>
+						<funcNameExpr expr="def\s\K\w+" />
+					</functionName>
+				</function>
+			</classRange>
+			<!-- without class-->
+			<function
+				mainExpr="^\s*def\s+\w+"
+			>
+				<functionName>
+					<nameExpr expr="def\s\K\w+" />
+				</functionName>
+			</function>
+		</parser>
+	</functionList>
+</MacpadPlus>

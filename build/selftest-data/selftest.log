@@ -1,0 +1,52 @@
+PASS  Layout: file opened at launch has no horizontal scroll bar  -- scrollWidth=1125 clip=1125 doc=1125
+PASS  Layout: no horizontal scroll bar when lines fit  -- scrollWidth=1139 clip=1139 doc=1139 margins=1
+PASS  Layout: horizontal scroll bar for a long line  -- scrollWidth=14449
+PASS  Mark: all occurrences (case-insensitive)  -- 3 marks
+PASS  Mark: bookmark lines  -- 1,2,4
+PASS  Mark: copy marked text  -- beta\nbeta\nBeta
+PASS  Mark: match case with purge  -- 2 marks
+PASS  Mark: regular expression  -- 6 marks
+PASS  Mark: clear all marks
+PASS  Incremental search: first match  -- 8-11
+PASS  Incremental search: highlight all  -- 3
+PASS  Incremental search: next  -- 18
+PASS  Incremental search: previous  -- 8
+PASS  Incremental search: not found status  -- Phrase not found
+PASS  Column editor: numbers with leading zeros  -- 08a\n09b\n10c\n11d
+PASS  Column editor: increase and repeat  -- 1ab\n1ab\n3ab\n3ab
+PASS  Column editor: text into a column selection  -- abc\naXYbc\naXYbc\nabc
+PASS  Column editor: pads short lines  -- abcd|ef\nab  |\nabcd|ef
+PASS  Column editor: binary, space padded  --  101 ... 1111
+PASS  Find chars in range: non-ASCII  -- 4-6
+PASS  Find chars in range: custom range (euro sign)  -- 10-13
+PASS  Find chars in range: backwards  -- 7
+PASS  Find chars in range: not found
+PASS  Hash: MD5  -- 900150983cd24fb0d6963f7d28e17f72
+PASS  Hash: SHA-1  -- a9993e364706816aba3e25717850c26c9cd0d89d
+PASS  Hash: SHA-256  -- ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
+PASS  Hash: SHA-512  -- ddaf35a193617abacc417349ae20413112e6fa4e89a97ea20a9eeee64b55d39a2192992a274fc1a836ba3c23a3feebbd454d4423643ce80e2a9ac94fa54ca49f
+PASS  Hash: MD5 of selection to clipboard  -- 900150983cd24fb0d6963f7d28e17f72
+PASS  Run: command with variables  -- run test.txt|run test|.txt|hello|2|4|/Users/johannesdecker|/Users/johannesdecker/Macpad++_master/build/selftest-data
+PASS  Print: styled document to PDF  -- 3 pages
+PASS  UDL: preinstalled Markdown languages  -- Markdown (preinstalled), Markdown (preinstalled dark mode)
+PASS  UDL: .md file uses the Markdown UDL  -- Markdown (preinstalled dark mode) lexer=user
+PASS  UDL: Markdown is highlighted  -- styles 2 / 0
+PASS  UDL: import  -- 1
+PASS  UDL: imported language highlights keywords and comments  -- SelfTestLang kw=4 comment=2
+PASS  UDL: toggle comment uses the UDL comment token  -- # begin\n# 
+PASS  UDL editor: comment field encoding  -- 00// 00# 01 02 03((EOL)) 03/* 04*/
+PASS  UDL editor: create new language
+PASS  UDL editor: edits drive highlighting  -- Self Test UDL kw=4 line=2 block=1 str=16 op=12 kw=4
+PASS  UDL editor: folding keywords  -- level=0x4012400
+PASS  UDL editor: live update of open documents  -- 4
+PASS  UDL editor: styler colour and bold  -- fore=0000ff bold=1
+PASS  UDL editor: transparent style uses the default colour  -- fore=ccdcdc default=ccdcdc
+PASS  UDL editor: saved file  -- Self Test UDL.xml
+PASS  UDL editor: reloads saved language  -- /* \ stu
+PASS  UDL editor: styler sheet opens
+PASS  UDL editor: rename follows documents and file  -- Renamed UDL
+PASS  UDL editor: remove  -- lang=0
+PASS  UDL editor: menu command opens it on the current language  -- Markdown (preinstalled dark mode)
+PASS  UDL editor: edited preinstalled language saved as user copy
+
+0 failure(s)

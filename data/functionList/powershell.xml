@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C)2026 Johannes Decker <lohnertspuckjoe@gmail.com> -->
+<MacpadPlus>
+	<functionList>
+		<!-- ================================================== [ PowerShell ] -->
+
+		<parser
+			displayName="PowerShell"
+			id         ="powershell_function"
+			commentExpr="(?x)                                               # Utilize inline comments (see `RegEx - Pattern Modifiers`)
+							(?s:\x3C\x23(?:[^\x23]|\x23[^\x3E])*\x23\x3E)   # Multi Line Comment
+						|	(?m-s:\x23.*$)                                  # Single Line Comment
+						"
+		>
+			<function
+				mainExpr="(?x)                                              # Utilize inline comments (see `RegEx - Pattern Modifiers`)
+						\b
+						(?:function|filter)
+						\s+
+						(?:
+							[A-Za-z_]\w*
+							:
+						)?
+						[A-Za-z_][\w\-]*
+						\s*
+						[({]
+					"
+			>
+				<functionName>
+					<nameExpr expr="[A-Za-z_][\w\-]*(?=\s*[({])" />
+				</functionName>
+				<className>
+					<nameExpr expr="[A-Za-z_]\w*(?=:)" />
+				</className>
+			</function>
+		</parser>
+	</functionList>
+</MacpadPlus>

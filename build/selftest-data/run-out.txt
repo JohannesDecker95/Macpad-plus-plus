@@ -1,0 +1,1 @@
+run test.txt|run test|.txt|hello|2|4|/Users/johannesdecker|/Users/johannesdecker/Macpad++_master/build/selftest-data

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C)2026 Johannes Decker <lohnertspuckjoe@gmail.com> -->
+<MacpadPlus>
+	<functionList>
+		<!-- ===================================================== [ AutoIt3 ] -->
+
+		<parser
+			displayName="AutoIt3"
+			id         ="autoit3_function"
+			commentExpr="(?x)                                               # Utilize inline comments (see `RegEx - Pattern Modifiers`)
+							(?is:\x23cs.*?\x23ce)                           # Multi Line Comment
+						|	(?m-s:^\h*;.*?$)                                # Single Line Comment
+						"
+		>
+			<function
+				mainExpr="(?x)                                              # Utilize inline comments (see `RegEx - Pattern Modifiers`)
+						(?m)^\h*                                            # optional leading whitespace
+						(?i:FUNC\s+)                                        # start-of-function indicator
+						\K                                                  # keep the text matched so far, out of the overall match
+						[A-Za-z_]\w*                                        # valid character combination for identifiers
+						\s*\([^()]*?\)                                      # parentheses required, parameters optional
+					"
+			>
+				<!-- comment out the following node to display the function with its parameters -->
+				<functionName>
+					<nameExpr expr="[A-Za-z_]\w*" />
+				</functionName>
+			</function>
+		</parser>
+	</functionList>
+</MacpadPlus>
