@@ -1,5 +1,7 @@
 # Macpad++
 
+<img src="data/icons/Macpad++_logo.jpeg" alt="Macpad++ logo" width="200" align="right">
+
 Macpad++ is a clone of Notepad++ for the Mac. It runs natively on Apple silicon (arm64) Macs
 with macOS 11 Big Sur or later. No emulation, Wine or Rosetta is involved.
 
